@@ -1,0 +1,228 @@
+//====================================================================================================
+
+//====================================================================================================
+
+///Burger
+.main-menu-toggle-btn {
+	width: rem(36);
+  height: rem(36);
+	&__sandwich {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: rem(26);
+		margin: auto;
+		transition: 0.3s all;
+		@media screen and (max-width: $mobile) {
+			width: rem(30);
+			height: rem(20);
+		}
+		& > span {
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 2px;
+			border-radius: rem(2);
+			background-color: $--white;
+			transition: transform 0.4s, top 0.2s;
+			&:first-child {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: rem(12);
+				@media screen and (max-width: $mobile) {
+					top: rem(9);
+				}
+				transition: transform 0.4s, top 0.2s;
+				transition-delay: 0.2s, 0s;
+			}
+			&:last-child {
+				top: rem(24);
+				transition: all 0.4s;
+  			transition-delay: 0.1s;
+				@media screen and (max-width: $mobile) {
+					top: rem(18);
+				}
+			}
+		}
+	}
+	&.active &__sandwich {
+		& > span {
+			&:first-child {
+				top: rem(11);
+				transform: rotate(135deg);
+			}
+			&:nth-child(2) {
+				transform: rotate(-135deg);
+				@media screen and (max-width: $mobile) {
+					top: rem(11);
+				}
+			}
+			&:last-child {
+				top: 0;
+				opacity: 0;
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: $--mainBg;
+	z-index: 11;
+	&__container {
+		display: flex;
+		align-items: center;
+		padding-top: rem(30);
+		padding-bottom: rem(30);
+		@media screen and (max-width: $mbpMobile) {
+			padding-top: rem(15);
+			padding-bottom: rem(15);
+		}
+	}
+	&__logo {
+		flex: 0 0 auto;
+		margin-right: rem(20);
+	}
+	&__menu {
+		flex: 1 1 auto;
+		margin-right: rem(20);
+		@media screen and (max-width: $mbpPc) {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(183, 221, 185, 0);
+			margin-right: 0;
+			z-index: 8;
+			transition: visibility 0.3s,background-color 0.3s;
+			visibility: hidden;
+			&.open {
+				background-color: rgba(183, 221, 185, 0.8);
+				visibility: visible;
+			}
+		}
+	}
+	&__menu-list {
+		justify-content: center;
+	}
+	&__contact-btn-area {
+		flex: 0 0 auto;
+		@media screen and (max-width: $mbpPc) {
+			flex: 1 0 auto;
+			display: flex;
+			justify-content: flex-end;
+			margin-right: rem(40);
+		}
+	}
+	&__contact-btn {
+		padding-top: rem(0);
+		padding-bottom: rem(0);
+		@media screen and (max-width: 580px) {
+			display: none;
+		}
+		@media screen and (max-width: $mbpMobile) {
+			font-size: rem(20);
+			padding-top: rem(0);
+			padding-bottom: rem(0);
+			border-width: rem(10);
+		}
+	}
+	&__menu-btn {
+		flex: 0 0 auto;
+		display: none;
+		position: relative;
+		left: 0;
+		top: 0;
+		z-index: 10;
+		@media screen and (max-width: $mbpPc) {
+			display: block;
+		}
+	}
+}
+.main-menu {
+	&__wrap {
+		height: 100%;
+		width: 100%;
+		margin-left: auto;
+		@media screen and (max-width: $mbpPc) {
+			max-width: rem(500);
+		}
+		@media screen and (max-width: 540px) {
+			max-width: rem(540);
+		}
+	}
+	&__inner {
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s;
+		@media screen and (max-width: $mbpPc) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			right: -100%;
+			background-color: $--mainBg;
+			padding: rem(40) rem(20);
+		}
+	}
+	&.open &__inner {
+		transform: translateX(-100%);
+	}
+	&__logo {
+		display: none;
+		margin-bottom: rem(50);
+		@media screen and (max-width: $mbpPc) {
+			display: block;
+		}
+	}
+}
+.menu {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: rem(-8) rem(-12);
+		@media screen and (max-width: $mbpPc) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	&__item {
+		margin: rem(8) rem(12);
+	}
+	&__btn {
+	}
+}
+.menu-text-btn {
+	position: relative;
+	left: 0;
+	top: 0;
+	font-size: rem(20);
+	line-height: rem(30);
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	color: $--white;
+	&:after {
+		content: "";
+		position: absolute;
+		height: rem(2);
+		width: 0;
+		background-color: $--white;
+		left: 50%;
+		bottom: rem(-4);
+		visibility: hidden;
+		transition: visibility 0.3s, left 0.3s, width 0.3s;
+	}
+	&:hover:after {
+		width: 100%;
+		left: 0;
+		visibility: visible;
+	}
+}

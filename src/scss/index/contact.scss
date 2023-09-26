@@ -1,0 +1,206 @@
+.contact {
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: $--white;
+	&__background {
+		position: absolute;
+		top: rem(70);
+		bottom: rem(70);
+		height: auto;
+		width: 76%;
+		background-color: $--mainBg;
+		z-index: 0;
+		@media screen and (max-width: $mbpPc) {
+			width: 100%;
+			bottom: rem(160);
+		}
+	}
+	&__container {
+		position: relative;
+		padding-top: rem(105);
+		padding-bottom: rem(105);
+		@media screen and (max-width: $mbpMobile) {
+			padding-top: rem(90);
+			padding-bottom: rem(90);
+		}
+		z-index: 1;
+	}
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__info-area {
+		flex: 0 1 40%;
+		@media screen and (max-width: $mbpPc) {
+			flex: 0 1 100%;
+		}
+	}
+	&__form-area {
+		flex: 0 1 60%;
+		@media screen and (max-width: $mbpPc) {
+			flex: 0 1 100%;
+		}
+	}
+	&__title {
+		max-width: rem(750);
+		margin: 0 auto rem(30);
+		@media screen and (min-width: ($mbpPcNu + 0.1px)) {
+			font-size: rem(30);
+			text-align: left;
+			margin-left: 0;
+			&:before {
+				margin-right: 0;
+			}
+			&:after {
+				width: rem(70);
+			}
+		}
+		@media screen and (max-width: $mbpMobile) {
+			font-size: rem(30);
+		}
+	}
+	&__info-list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: rem(-13);
+		@media screen and (max-width: $mbpPc) {
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: center;
+		}
+	}
+	&__info-list-wrap {
+		@media screen and (max-width: $mbpPc) {
+			margin-bottom: rem(30);
+		}
+	}
+	&__info-list-item {
+		margin: rem(13);
+	}
+	
+	&__form {
+		margin: 0 auto;
+		max-width: rem(850);
+	}
+}
+.contact-form {
+	background-color: $--white;
+	border-radius: rem(20);
+	box-shadow: 0px 0px rem(30) 0px #00A7733D;
+	padding: rem(40) rem(36);
+	@media screen and (max-width: $mbpMobile) {
+		padding: rem(40) rem(30);
+	}
+	@media screen and (max-width: $mbpSmallMobile) {
+		padding: rem(30) rem(15);
+	}
+	&__inner {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		max-width: rem(843);
+		font-size: rem(30);
+		font-weight: 700;
+		line-height: rem(36);
+		letter-spacing: 0em;
+		text-align: center;
+		color: $--darkGreen;
+		margin-bottom: rem(30);
+	}
+	&__inputs {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: rem(30);
+	}
+	&__inputs-col {
+		flex: 0 1 50%;
+		display: flex;
+		flex-direction: column;
+		&:first-child {
+			padding-right: rem(15);
+		}
+		&:last-child {
+			padding-left: rem(10);
+		}
+		@media screen and (max-width: $mbpMobile) {
+			flex: 0 1 100%;
+			&:first-child {
+				padding-right: 0;
+				margin-bottom: rem(20);
+			}
+			&:last-child {
+				padding-left: 0;
+			}
+		}
+	}
+	&__text-input, &__textarea  {
+		padding: rem(14) rem(20);
+		outline: rem(2) solid $--border;
+		border-radius: rem(8);
+		margin-bottom: rem(20);
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__text-input::placeholder, &__textarea::placeholder  {
+		font-size: rem(18);
+		line-height: rem(22);
+		color: $--placeholder;
+	}
+	&__text-input:focus, &__textarea:focus {
+		outline: rem(4) solid $--border;
+	}
+	&__text-input.error, &__textarea.error {
+		outline: rem(2) solid $--error;
+	}
+	&__text-input {
+
+	}
+	&__textarea {
+		min-height: 100%;
+		max-width: 100%;
+		resize: none;
+		@media screen and (max-width: $mbpMobile) {
+			min-height: rem(80);
+		}
+	}
+	&__send-btn {
+		align-self: center;
+	}
+	&__msg-area {
+		//height: 0;
+		margin-top: 0;
+		line-height: 1.2;
+		font-weight: 600;
+		color: $--error;
+		visibility: hidden;
+		transition: transform 0.3s, visibility 0.3s, height 0.3s, margin 0.3s;
+		overflow: hidden;
+		transform: scaleY(0);
+		& p {
+			display: flex;
+			align-items: center;
+			margin-bottom: rem(12);
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:before {
+				content: "";
+				display: inline-block;
+				min-width: rem(4);
+				min-height: rem(4);
+				border-radius: 50%;
+				background-color: $--error;
+				margin: 0.5em rem(15) auto;
+			}
+		}
+	}
+	&.error &__msg-area {
+		margin-top: rem(30);
+		transform: scaleY(1);
+		visibility: visible;
+	}
+}

@@ -1,0 +1,6 @@
+phpmailer/
+node_modules/
+version.json
+Source/
+**/*.zip
+**/*.rar

@@ -1,0 +1,64 @@
+//====================================================================================================
+
+//====================================================================================================
+.footer {
+	background-color: $--mainBg;
+	&__container {
+		display: flex;
+		padding-top: rem(38);
+		padding-bottom: rem(38);
+		@media screen and (max-width: $mbpMobile) {
+			flex-direction: column;
+			align-items: center;
+			padding-top: rem(25);
+			padding-bottom: rem(25);
+		}
+	}
+	&__col {
+		&:first-child {
+			flex: 0 0 auto;
+			margin-right: rem(40);
+			@media screen and (max-width: $mbpMobile) {
+				margin-bottom: rem(30);
+				margin-right: 0;
+			}
+		}
+		&:nth-child(2) {
+			flex: 1 1 auto;
+			display: flex;
+			align-items: center;
+		}
+	}
+	&__logo {
+		margin-bottom: rem(20);
+	}
+	&__social-list {
+		display: flex;
+		justify-content: center;
+	}
+	&__social-list-item {
+		margin: 0  rem(12);
+	}
+	&__social-list-item-icon {
+		margin: 0;
+	}
+	&__menu {
+	}
+}
+.footer-menu {
+	&__inner {
+		
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: rem(-10) rem(-12);
+		@media screen and (max-width: $mbpMobile) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	&__item {
+		margin: rem(10) rem(12);
+	}
+}

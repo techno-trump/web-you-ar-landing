@@ -1,0 +1,64 @@
+.advantages {
+	&__container {
+		padding-top: rem(35);
+		padding-bottom: rem(35);
+		@media screen and (max-width: $mbpMobile) {
+			padding-top: rem(20);
+			padding-bottom: rem(20);
+		}
+	}
+	&__title {
+		margin-bottom: rem(60);
+	}
+	&__cards-list {
+		display: flex;
+		flex-wrap: wrap;
+		border: rem(2) solid $--darkGreen;
+		background-color: $--white;
+		padding: rem(20);
+		border-radius: rem(20);
+	}
+	&__card-wrap {
+		flex: 0 0 25%;
+		@media screen and (max-width: $mbpTablet) {
+			flex: 0 0 50%;
+		}
+		@media screen and (max-width: 640px) {
+			flex: 0 0 100%;
+		}
+	}
+}
+.advantage-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-height: 100%;
+	padding: rem(20);
+	&__icon-wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: rem(40);
+		height: rem(40);
+		border-radius: 50%;
+		background-color: $--iconBg;
+		margin-bottom: rem(10);
+	}
+	&__icon {
+		max-width: 60%;
+		max-height: 60%;
+	}
+	&__title {
+		font-size: rem(22);
+		font-weight: 700;
+		line-height: rem(25);
+		color: $--darkGreen;
+		margin-bottom: rem(12);
+	}
+	&__text {
+		font-size: rem(18);
+		line-height: rem(27);
+		color: $--mainText;
+	}
+}
